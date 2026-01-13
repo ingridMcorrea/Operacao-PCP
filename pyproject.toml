@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.28.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/toolbox"]
+
+[project]
+name = "Toolbox"
+description = "Ferramenta criada para auxiliar o PCP em tarefas repetitivas"
+version = "0.0.1"
+# dynamic = ["version"]
+requires-python = ">= 3.13"
+dependencies = [
+    # Python Provided
+    # "time",
+    # "webbrowser",
+    # "os",
+    # "tkinter",
+    # "threading",
+
+    "pyautogui",
+    "openpyxl",
+    "pyperclip",
+    "pygetwindow",
+    "schedule",
+    "opencv-python",
+    "pillow",
+    "numpy",
+    "python-dateutil",
+]
+authors = [
+    {name = "Kaue Faria", email="kaue.faria@araujo.com.br"}
+]
+readme = "README.md"
+
+[project.scripts]
+# Syntax: command_name = "package.module:function"
+toolbox = "toolbox.__main__:cli"
