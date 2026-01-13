@@ -18,7 +18,7 @@ def main(args=None):
     
     
 
-    exportaBases.exportaDiaria()
+    exportaBases.exportaCadastros()
 
     # schedule.every(25).minutes.do(exportaBases.exportaDiaria)
     # schedule.every().day.at("07:00")
