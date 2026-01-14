@@ -9,6 +9,7 @@ import schedule
 
 from toolbox.ToolboxApp import ToolboxApp
 
+from toolbox import tabelaChefe
 from toolbox import exportaBases
 from toolbox import totvsTools
 from toolbox import core
@@ -16,9 +17,8 @@ from toolbox import core
 def main(args=None):
     core.resizeTotvs()
     
-    
-
-    exportaBases.exportaCadastros()
+    # exportaBases.exportaCadastros()
+    # exportaBases.exportaDiaria()
 
     # schedule.every(25).minutes.do(exportaBases.exportaDiaria)
     # schedule.every().day.at("07:00")
@@ -38,6 +38,8 @@ def main(args=None):
 
         if row[0].value == None:
             break
+
+        tabelaChefe.insereSupervisor(row[0].value, "0018628-7", row[1].value, "01/01/2026")
          
 
         contador += 1

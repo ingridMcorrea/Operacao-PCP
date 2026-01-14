@@ -138,7 +138,7 @@ def insereSupervisor(codSecao, matriculaSupervisor, codigoEquipeNome, dataInicio
     
     # pyautogui.PAUSE = 1
 
-    pyautogui.PAUSE = 0.1
+    pyautogui.PAUSE = 0.150
     buscaClicaBotao("novoSupervisor.png")
     pyperclip.copy(matriculaSupervisor)
     pyautogui.hotkey("ctrl", "v")

@@ -228,6 +228,7 @@ def setupConsultas():
     pyautogui.hotkey("v", "i")
     time.sleep(2)
 
+    pyautogui.PAUSE = 0.3
     for i in range(12):
         pyautogui.press("down")
 
