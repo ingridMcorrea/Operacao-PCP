@@ -72,13 +72,7 @@ def exportaCadastros():
     procuraSentenca("PCP.01.093")
     exportaSentencaV2("PCP.01.093 - Cargo e agrupamento PPR.XLSX")
 
-    pyautogui.hotkey("ctrl", "w")
-
-    time.sleep(1)
-    webbrowser.open("https://docs.google.com/spreadsheets/d/1oqeE36_FSK7VYgAGSx45ZuwDGU6O1PFmeGpNB9B1NII/edit?gid=664006522#gid=664006522")
-    time.sleep(15)
-    ficaBuscandoClicaBotaoAteAcharEClica("atualizarCadastros.png", 8)
-    pyautogui.hotkey("ctrl", "w")
+    atualizaGoogleSheets("https://docs.google.com/spreadsheets/d/1oqeE36_FSK7VYgAGSx45ZuwDGU6O1PFmeGpNB9B1NII/edit?gid=664006522#gid=664006522")
 
 def exportaDiaria():
     setupConsultas()
@@ -124,37 +118,21 @@ def exportaDiaria():
     procuraSentenca("PCP.01.032")
     exportaSentencaV2("PCP.01.032 - Requisições de Desligamento Abertas.XLSX")
 
-    pyautogui.hotkey("ctrl", "w")
-
-    time.sleep(1)
-    webbrowser.open("https://docs.google.com/spreadsheets/d/1crwocHnyA8yrE66Jlv7Q9YSxT_uaDahUrUfar7kn_X4/edit?gid=1926191882")
-    time.sleep(15)
-    ficaBuscandoClicaBotaoAteAcharEClica("atualizarDiaria.png", 8)
-    pyautogui.hotkey("ctrl", "w")
+    atualizaGoogleSheets("https://docs.google.com/spreadsheets/d/1crwocHnyA8yrE66Jlv7Q9YSxT_uaDahUrUfar7kn_X4/edit?gid=1926191882")
 
 def exportaHorarios():
     setupConsultas()
     procuraSentenca("PCP.01.120", True)
     exportaSentencaV2("PCP.01.120 - Log de Importação WFM Ultimos 3 dias - Período Ativo.XLSX")
 
-    pyautogui.hotkey("ctrl", "w")
-    time.sleep(1)
-    webbrowser.open("https://docs.google.com/spreadsheets/d/1gmsPYOM9kdf7PZgLxtn_Hb_E01I_rw0N-P7ph-4Q2hE/edit?gid=0#gid=0")
-    time.sleep(15)
-    ficaBuscandoClicaBotaoAteAcharEClica("atualizarBase.png", 8)
-    pyautogui.hotkey("ctrl", "w")
+    atualizaGoogleSheets("https://docs.google.com/spreadsheets/d/1gmsPYOM9kdf7PZgLxtn_Hb_E01I_rw0N-P7ph-4Q2hE/edit?gid=0#gid=0")
 
 def exportaTabelaSalarial():
     setupConsultas()
     procuraSentenca("PCP.02.038", True)
     exportaSentencaV2("PCP.02.038 - Tabelas Salariais com suas vinculações de seção e função.XLSX", True)
 
-    pyautogui.hotkey("ctrl", "w")
-    time.sleep(1)
-    webbrowser.open("https://docs.google.com/spreadsheets/d/1fashYFlb0fa9pwwX5VPfxdG_gsMiK7Sn6R1qFPHYQVw/edit?gid=0#gid=0")
-    time.sleep(15)
-    ficaBuscandoClicaBotaoAteAcharEClica("atualizarBase.png", 8)
-    pyautogui.hotkey("ctrl", "w")
+    atualizaGoogleSheets("https://docs.google.com/spreadsheets/d/1fashYFlb0fa9pwwX5VPfxdG_gsMiK7Sn6R1qFPHYQVw/edit?gid=0#gid=0")
 
 def exportaSentenca(nomeSentenca, fotoExemploNome, maisDe10KLinhas = False):
     # pyautogui.PAUSE = 0.3
@@ -260,3 +238,11 @@ def setupConsultas():
 
     buscaClicaBotao("lupaSentencas.png", 2)
     time.sleep(0.2)
+
+def atualizaGoogleSheets(googleSheetsUrl):
+    pyautogui.hotkey("ctrl", "w")
+    time.sleep(1)
+    webbrowser.open(googleSheetsUrl)
+    time.sleep(15)
+    pyautogui.hotkey("ctrl", "alt", "shift", "1")
+    pyautogui.hotkey("ctrl", "w")

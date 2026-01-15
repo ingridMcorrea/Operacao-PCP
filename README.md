@@ -13,5 +13,18 @@ Para instalação em ambiente de desenvolvimento
 
 Dentro do diretório onde há um arquivo de input.xlxs
 
-Para executar o toolbox
-```python -m toolbox```
+Para ver os possíveis comandos
+```python -m toolbox -h```
+ou
+```python -m toolbox --help```
+
+Atualmente existem três modos de execução do Toolbox
+1. Atualização de Bases
+```python -m toolbox -a``` 
+ou
+```python -m toolbox --atualizar```
+
+2. Execução de comandos via input.xlsx
+```python -m toolbox -e```
+ou
+```python -m toolbox --executar```
