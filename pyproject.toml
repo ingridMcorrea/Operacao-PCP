@@ -28,6 +28,7 @@ dependencies = [
     "pillow",
     "numpy",
     "python-dateutil",
+    "argparse",
 ]
 authors = [
     {name = "Kaue Faria", email="kaue.faria@araujo.com.br"}

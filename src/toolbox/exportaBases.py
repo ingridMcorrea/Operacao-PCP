@@ -80,7 +80,6 @@ def exportaCadastros():
     ficaBuscandoClicaBotaoAteAcharEClica("atualizarCadastros.png", 8)
     pyautogui.hotkey("ctrl", "w")
 
-
 def exportaDiaria():
     setupConsultas()
 
@@ -131,6 +130,30 @@ def exportaDiaria():
     webbrowser.open("https://docs.google.com/spreadsheets/d/1crwocHnyA8yrE66Jlv7Q9YSxT_uaDahUrUfar7kn_X4/edit?gid=1926191882")
     time.sleep(15)
     ficaBuscandoClicaBotaoAteAcharEClica("atualizarDiaria.png", 8)
+    pyautogui.hotkey("ctrl", "w")
+
+def exportaHorarios():
+    setupConsultas()
+    procuraSentenca("PCP.01.120", True)
+    exportaSentencaV2("PCP.01.120 - Log de Importação WFM Ultimos 3 dias - Período Ativo.XLSX")
+
+    pyautogui.hotkey("ctrl", "w")
+    time.sleep(1)
+    webbrowser.open("https://docs.google.com/spreadsheets/d/1gmsPYOM9kdf7PZgLxtn_Hb_E01I_rw0N-P7ph-4Q2hE/edit?gid=0#gid=0")
+    time.sleep(15)
+    ficaBuscandoClicaBotaoAteAcharEClica("atualizarBase.png", 8)
+    pyautogui.hotkey("ctrl", "w")
+
+def exportaTabelaSalarial():
+    setupConsultas()
+    procuraSentenca("PCP.02.038", True)
+    exportaSentencaV2("PCP.02.038 - Tabelas Salariais com suas vinculações de seção e função.XLSX", True)
+
+    pyautogui.hotkey("ctrl", "w")
+    time.sleep(1)
+    webbrowser.open("https://docs.google.com/spreadsheets/d/1fashYFlb0fa9pwwX5VPfxdG_gsMiK7Sn6R1qFPHYQVw/edit?gid=0#gid=0")
+    time.sleep(15)
+    ficaBuscandoClicaBotaoAteAcharEClica("atualizarBase.png", 8)
     pyautogui.hotkey("ctrl", "w")
 
 def exportaSentenca(nomeSentenca, fotoExemploNome, maisDe10KLinhas = False):
@@ -228,10 +251,9 @@ def setupConsultas():
     pyautogui.hotkey("v", "i")
     time.sleep(2)
 
-    pyautogui.PAUSE = 0.3
     for i in range(12):
         pyautogui.press("down")
-
+    time.sleep(0.3)
     pyautogui.press("enter")
     pyautogui.press("enter")
     time.sleep(3)
